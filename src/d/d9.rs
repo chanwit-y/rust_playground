@@ -1,5 +1,7 @@
 
-use std::{collections::HashMap};
+use std::collections::HashMap;
+
+use crate::d::file::read_input;
 
 struct Position {
     title: &'static str,
@@ -127,6 +129,7 @@ pub fn run() {
     // println!("{:?}", p);
     // println!("{:?}", result.len());
 
+
     let input = read_input("input/d9.txt").unwrap();
     
     for i in input.iter() {
@@ -142,11 +145,6 @@ pub fn run() {
     // println!("{:?}", result);
 }
 
-fn read_input(file: &str) -> Result<Vec<String>, std::io::Error> {
-    let contents = std::fs::read_to_string(file)?;
-    let lines = contents.lines().map(|x| x.to_string()).collect();
-    Ok(lines)
-} 
 
 fn move_position(
     item: &mut Position,
@@ -163,7 +161,7 @@ fn move_position(
         return true;
     }
 
-    return false;
+    false
 }
 
 fn move_2(p: &mut Vec<Position>, n: i32, move_type: &str, result: &mut HashMap<String, bool>) {
