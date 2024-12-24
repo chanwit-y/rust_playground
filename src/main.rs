@@ -1,8 +1,16 @@
+// use num_bigint::BigUint;
+// use num_traits::FromPrimitive;
+
 use rust_playground::d;
 
 fn main() {
     // d::d9::run();
     d::d11::run();
+    // let large_number_str = "234271887539542109550433007260887848071";
+    // let large_number = BigUint::parse_bytes(large_number_str.as_bytes(), 10).unwrap();
+    // let multiplier = BigUint::from_u32(19).unwrap();
+
+    // println!("The large number is: {}", large_number * multiplier);
 
 }
 
